@@ -59,5 +59,14 @@
     <Image Include="res\MouseMaze.ico">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="C:\Users\Administrator\Pictures\Saved Pictures\mouse.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="C:\Users\Administrator\Pictures\Saved Pictures\草坪.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="C:\Users\Administrator\Pictures\Saved Pictures\雷区.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

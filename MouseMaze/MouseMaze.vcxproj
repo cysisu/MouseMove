@@ -208,6 +208,9 @@
     <None Include="res\MouseMaze.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="C:\Users\Administrator\Pictures\Saved Pictures\mouse.png" />
+    <Image Include="C:\Users\Administrator\Pictures\Saved Pictures\草坪.jpg" />
+    <Image Include="C:\Users\Administrator\Pictures\Saved Pictures\雷区.jpg" />
     <Image Include="res\MouseMaze.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

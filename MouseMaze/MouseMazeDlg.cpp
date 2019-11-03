@@ -65,6 +65,7 @@ BEGIN_MESSAGE_MAP(CMouseMazeDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDOK, &CMouseMazeDlg::OnBnClickedOk)
+	ON_BN_CLICKED(IDC_BUTTON1, &CMouseMazeDlg::OnBnClickedButton1)
 END_MESSAGE_MAP()
 
 
@@ -161,3 +162,179 @@ void CMouseMazeDlg::OnBnClickedOk()
 	//ok
 	CDialogEx::OnOK();
 }
+
+
+
+void CMouseMazeDlg::OnBnClickedButton1()
+{
+	DrowCenter(0,3);
+	DrowLeft(0, 3);
+}
+
+
+void CMouseMazeDlg::DrowLeft(int i, int j)
+{
+	PicNode picNode = getPicNode(i, j);
+	CDC *pDC = picNode.cdc;
+	CRect rct = picNode.rct;
+	CBrush brs;
+	brs.CreateSolidBrush(RGB(0, 0, 0));
+	CRect picrct;
+	picrct.top = 0;
+	picrct.left = 0;
+	picrct.bottom = rct.Height();
+	picrct.right = 5;
+	pDC->FillRect(&picrct, &brs);
+}
+
+void CMouseMazeDlg::DrowRight(int i, int j)
+{
+	PicNode picNode = getPicNode(i, j);
+	CDC *pDC = picNode.cdc;
+	CRect rct = picNode.rct;
+	CBrush brs;
+	brs.CreateSolidBrush(RGB(0, 0, 0));
+	CRect picrct;
+	picrct.top = 0;
+	picrct.left = 0;
+	picrct.bottom = rct.Height();
+	picrct.right = rct.Width();
+	pDC->FillRect(&picrct, &brs);
+}
+
+void CMouseMazeDlg::DrowBottom(int i, int j)
+{
+	PicNode picNode = getPicNode(i, j);
+	CDC *pDC = picNode.cdc;
+	CRect rct = picNode.rct;
+	CBrush brs;
+	brs.CreateSolidBrush(RGB(0, 0, 0));
+	CRect picrct;
+	picrct.top = 0;
+	picrct.left = 0;
+	picrct.bottom = rct.Height();
+	picrct.right = rct.Width();
+	pDC->FillRect(&picrct, &brs);
+}
+
+void CMouseMazeDlg::DrowTop(int i, int j)
+{
+	PicNode picNode = getPicNode(i, j);
+	CDC *pDC = picNode.cdc;
+	CRect rct = picNode.rct;
+	CBrush brs;
+	brs.CreateSolidBrush(RGB(0, 0, 0));
+	CRect picrct;
+	picrct.top = 0;
+	picrct.left = 0;
+	picrct.bottom = rct.Height();
+	picrct.right = rct.Width();
+	pDC->FillRect(&picrct, &brs);
+}
+
+
+void CMouseMazeDlg::DrowCenter(int i, int j)
+{
+	PicNode picNode = getPicNode(i, j);
+	CDC *pDC = picNode.cdc;
+	CRect rct = picNode.rct;
+	CBrush brs;
+	brs.CreateSolidBrush(RGB(255, 123, 123));
+	CRect picrct;
+	picrct.top = 0;
+	picrct.left = 0;
+	picrct.bottom = rct.Height();
+	picrct.right = rct.Width();
+	pDC->FillRect(&picrct, &brs);
+}
+//通过ID获取picture control的CDC和CRect
+PicNode CMouseMazeDlg::getPicNode(int i, int j)
+{
+	PicNode pic;
+	CStatic* pWnd;
+	switch (i, j)
+	{
+	case (0, 0):
+		pWnd = (CStatic*)GetDlgItem(IDC_STATIC00);
+		break;
+	case (0, 1):
+		pWnd = (CStatic*)GetDlgItem(IDC_STATIC01);
+		break;
+	case (0, 2):
+		pWnd = (CStatic*)GetDlgItem(IDC_STATIC02);
+		break;
+	case (0, 3):
+		pWnd = (CStatic*)GetDlgItem(IDC_STATIC03);
+		break;
+	case (0, 4):
+		pWnd = (CStatic*)GetDlgItem(IDC_STATIC04);
+		break;
+	case (0, 5):
+		pWnd = (CStatic*)GetDlgItem(IDC_STATIC05);
+		break;
+	case (0, 6):
+		pWnd = (CStatic*)GetDlgItem(IDC_STATIC06);
+		break;
+	case (0, 7):
+		pWnd = (CStatic*)GetDlgItem(IDC_STATIC07);
+		break;
+	default:
+		pWnd = (CStatic*)GetDlgItem(IDC_STATIC00);
+		break;
+	}
+	pic.cdc= pWnd->GetDC();
+	pWnd->GetWindowRect(&pic.rct);
+	return pic;
+}
+
+
+
+
+
+
+CDC * CMouseMazeDlg::getpDc(int i, int j)
+{
+	CStatic* pWnd;
+	switch (i,j)
+	{
+	case (0, 0):
+		 pWnd = (CStatic*)GetDlgItem(IDC_STATIC00);
+		return pWnd->GetDC();
+	case (0, 1):
+		pWnd = (CStatic*)GetDlgItem(IDC_STATIC01);
+		return pWnd->GetDC();
+	case (0, 2):
+		pWnd = (CStatic*)GetDlgItem(IDC_STATIC02);
+		return pWnd->GetDC();
+	case (0, 3):
+		pWnd = (CStatic*)GetDlgItem(IDC_STATIC03);
+		return pWnd->GetDC();
+	case (0, 4):
+		pWnd = (CStatic*)GetDlgItem(IDC_STATIC04);
+		return pWnd->GetDC();
+	case (0, 5):
+		pWnd = (CStatic*)GetDlgItem(IDC_STATIC05);
+		return pWnd->GetDC();
+	case (0, 6):
+		pWnd = (CStatic*)GetDlgItem(IDC_STATIC06);
+		return pWnd->GetDC();
+	case (0, 7):
+		pWnd = (CStatic*)GetDlgItem(IDC_STATIC07);
+		return pWnd->GetDC();
+	default:
+		pWnd = (CStatic*)GetDlgItem(IDC_STATIC00);
+		return pWnd->GetDC();
+		break;
+	}
+	
+}
+
+CRect& CMouseMazeDlg::getPictureControlRect(int i, int j)
+{
+	CStatic* pWnd = (CStatic*)GetDlgItem(IDC_STATIC00);
+	CRect rct;
+	pWnd->GetWindowRect(&rct);
+	return rct;
+}
+
+
