@@ -1,8 +1,8 @@
 
 // MouseMazeDlg.h : header file
 //
-
 #pragma once
+
 class PicNode {
 public:
 	CRect rct;
@@ -15,6 +15,7 @@ public:
 	PicNode() {}
 };
 
+
 // CMouseMazeDlg dialog
 class CMouseMazeDlg : public CDialogEx
 {
@@ -22,13 +23,14 @@ class CMouseMazeDlg : public CDialogEx
 public:
 	CMouseMazeDlg(CWnd* pParent = NULL);	// standard constructor
 	CDC * getpDc(int i, int j);
-	CRect& getPictureControlRect(int i, int j);
 	void DrowCenter(int i,int j);  
 	PicNode getPicNode(int i, int j);  //通过ID去获取picture control的CRect和CDC
 	void DrowLeft(int i, int j);
 	void DrowRight(int i, int j);
 	void DrowTop(int i, int j);
 	void DrowBottom(int i, int j);
+	void displayMap();
+	int getSide(int r1, int c1, int r2, int c2); //bottom返回0,up return 1,left:2,right:3;
 // Dialog Data
 #ifdef AFX_DESIGN_TIME
 	enum { IDD = IDD_MOUSEMAZE_DIALOG };
@@ -51,4 +53,6 @@ protected:
 public:
 	afx_msg void OnBnClickedOk();
 	afx_msg void OnBnClickedButton1();
+	
+	afx_msg void OnBnClickedButton2();
 };

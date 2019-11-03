@@ -186,6 +186,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdjList.h" />
+    <ClInclude Include="Coord.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="MouseMaze.h" />
     <ClInclude Include="MouseMazeDlg.h" />

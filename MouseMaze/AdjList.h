@@ -14,6 +14,7 @@ public:
 	void insert(int row,int column);
 	//返回下一个节点数据
 	Vertex * next();
+	int remove(int row, int column);
 
 };
 AdjList::AdjList()
@@ -40,4 +41,24 @@ Vertex * AdjList::next()
 {
 	currentPtr = currentPtr->next;
 	return currentPtr;
+}
+
+
+int AdjList::remove(int row, int column)
+{
+	Vertex *nowPtr = head;
+
+	while(nowPtr->next!=NULL)
+	{
+		Vertex *tempPtr = nowPtr->next;
+		if (tempPtr->row == row&&tempPtr->column == column)
+		{
+			nowPtr->next = tempPtr->next;
+			delete tempPtr;
+			count--;
+			return 1;
+		}
+		nowPtr = nowPtr->next;
+	}
+	return 0;
 }
