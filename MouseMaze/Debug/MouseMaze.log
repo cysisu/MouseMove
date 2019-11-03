@@ -1,4 +1,2 @@
-﻿  MouseMazeDlg.cpp
-e:\程序\接单程序\2019-10\老鼠走迷宫\mousemaze\mousemaze\mousemazedlg.cpp(337): warning C4172: returning address of local variable or temporary: rct
-  MouseMaze.vcxproj -> E:\程序\接单程序\2019-10\老鼠走迷宫\MouseMaze\Debug\MouseMaze.exe
+﻿  MouseMaze.vcxproj -> E:\程序\接单程序\2019-10\老鼠走迷宫\MouseMaze\Debug\MouseMaze.exe
   MouseMaze.vcxproj -> E:\程序\接单程序\2019-10\老鼠走迷宫\MouseMaze\Debug\MouseMaze.pdb (Partial PDB)
